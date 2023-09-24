@@ -14,7 +14,12 @@ import com.jme3.texture.Texture;
 import com.jme3.util.TangentBinormalGenerator;
 
 /** Sample 6 - how to give an object's surface a material and texture.
- * How to make objects transparent. How to make bumpy and shiny surfaces.  */
+ * How to make objects transparent. How to make bumpy and shiny surfaces.
+
+ see:
+ https://wiki.jmonkeyengine.org/docs/3.4/tutorials/beginner/hello_material.html
+
+ * */
 public class HelloMaterial extends SimpleApplication {
 
     public static void main(String[] args) {
@@ -40,6 +45,9 @@ public class HelloMaterial extends SimpleApplication {
         Geometry cube2Geo = new Geometry("window frame", cube2Mesh);
         Material cube2Mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         cube2Mat.setTexture("ColorMap", assetManager.loadTexture("Textures/ColoredTex/Monkey.png"));
+        /**
+         *
+         */
         cube2Mat.getAdditionalRenderState().setBlendMode(BlendMode.Alpha);  // activate transparency
         cube2Geo.setQueueBucket(Bucket.Transparent);
         cube2Geo.setMaterial(cube2Mat);
